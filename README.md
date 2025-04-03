@@ -13,3 +13,8 @@ when you have a "file" type and an IP:port -->
                             simple input tries-->
 6. python3 -c "print(b'A'*200)" | ./<filename>
 7. 
+
+
+when you have a "file" without an IP:port-->
+1. checksum
+2. ghidra or ida free  (cd opt/inda-free/ and then ./ida)
