@@ -17,5 +17,6 @@ when you have a "file" type and an IP:port -->
 
 when you have a "file" without an IP:port-->
 1. checksum
-2. ghidra or ida free  (cd opt/inda-free/ and then ./ida)
-3. hecdump <filename>.enc
+2. strings
+3. ghidra or ida free  (cd opt/inda-free/ and then ./ida)
+4. hecdump <filename>.enc
