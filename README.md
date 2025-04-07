@@ -1,7 +1,7 @@
 # REV-PWNS
 my personal guide for rev-pwns
 
-
+------------------------------------------------------------------------------------------------------------------------
 when you have a "file" type and an IP:port -->
 1. nc IP port (so you can try the program)
 2. checksum --file=/home/kali/<thefile>  (to see if there is a canary)
@@ -14,9 +14,19 @@ when you have a "file" type and an IP:port -->
 6. python3 -c "print(b'A'*200)" | ./<filename>
 7. 
 
-
+-------------------------------------------------------------------------------------------------------------------------
 when you have a "file" without an IP:port-->
 1. checksum
 2. strings
 3. ghidra or ida free  (cd opt/inda-free/ and then ./ida)
 4. hecdump <filename>.enc
+
+
+-----------------------------------------------------------------------------------------------------------------------
+if you get a file with ARM code (Advanced RISC Machine, used for mobiles,servers,Raspberry Pi etc)
+1. nc ip port
+2. you need a code to solve the inputs of it:
+   https://github.com/itwaseasy/crackmes-solutions/blob/master/hackTheBox/arms_race/emulator.py
+   This script is a remote challenge solver using ARM code emulation. It connects to a remote service, receives ARM machine    
+   code, emulates its execution, and returns the result (the value in register R0)
+
