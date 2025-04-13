@@ -30,3 +30,34 @@ if you get a file with ARM code (Advanced RISC Machine, used for mobiles,servers
    This script is a remote challenge solver using ARM code emulation. It connects to a remote service, receives ARM machine    
    code, emulates its execution, and returns the result (the value in register R0)
 
+--------------------------------------------------------------------------------------------------------------------------
+you just can a flag/text with scrambled chars. It encrypts them based on the time/date and month at that moment. So:
+
+import MD5 from 'crypto-js/md5.js';
+let daysBack = 0;
+
+#use this flag from where you got it
+const flag = [0x45, 0x00, 0x50, 0x39, 0x08, 0x6f, 0x4d, 0x5b, 0x58, 0x06, 0x66, 0x40, 0x58, 0x4c, 0x6d,0x5d, 0x16, 0x6e, 0x4f, 0x00, 0x43, 0x6b, 0x47, 0x0a,0x44, 0x5a, 0x5b, 0x5f, 0x51, 0x66, 0x50, 0x57]
+const ctfDay = new Date("2025-04-11");
+
+#use this to clear the unwanted chars
+const canBeFlag = (flag) => [...flag].every(x => x.charCodeAt(0) >= 48 && x.charCodeAt(0) <= 125)
+
+
+#try for the previus 100 days
+while (daysBack < 100) {
+    for(let minute = 0; minute < 24 * 60; minute++) {
+        const dateTime = new Date(ctfDay.getTime() - daysBack * 24 * 60 * 60 * 1000 + minute * 60 * 1000);
+        const date = `${(dateTime.getMonth() + 1).toString().padStart(2, '0')}/${dateTime.getDate().toString().padStart(2, '0')}/${dateTime.getFullYear()}`
+        const time = `${dateTime.getHours().toString().padStart(2, '0')}:${dateTime.getMinutes().toString().padStart(2, '0')}`
+        const base = "Europe/Warsaw-" + date + "-" + time;
+         # i used europe/warsaw cayse that was the place the flag used for first time
+   
+        var hash = MD5(base).toString();
+        const result = flag.map((x, i) => String.fromCharCode(x ^ hash.charCodeAt(i))).join('')
+        if(canBeFlag(result))
+            console.log(result);
+    }
+
+    daysBack++;
+}
