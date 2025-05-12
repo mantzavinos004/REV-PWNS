@@ -34,7 +34,7 @@ print(flag)
 
 ------------------------------------------------------------------------------------------------------------------------
 when you have a "file" type and an IP:port -->
-1. nc IP port (so you can try the program)
+1. nc IP port (so you can try the program)         or use this for a more interactive shell: rlwrap nc <host> <port>
 2. checksum --file=/home/kali/<thefile>  (to see if there is a canary)
 3. now load the file to ghidra  (or objdump -t <filename>) 
 4. There we go to the main functio non "Listing" window and go to the main and then open a "window" --> "Decompile: ...."
