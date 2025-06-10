@@ -31,10 +31,8 @@ Assembly is a low-leve llanguage, which CPU understands. x86 ==> 32-bit architec
 | Registers   |   x86 (32bit)        |  x64 (64bit)  |	
 |-------------|----------------------|---------------------------------|
 | General     |  EAX, EBX, ECX, EDX  | RAX, RBX, RCX, RDX	
-
-Stack...........ESP, EBP............................RSP, RBP	
-
-Else           | ESI, EDI...........................RSI, RDI..............(usefull for loops/copy)
+| Stack       |  ESP, EBP            | RSP, RBP	 |
+| Else        | ESI, EDI             | RSI, RDI (usefull for loops/copy) |
 
 
 Example:
