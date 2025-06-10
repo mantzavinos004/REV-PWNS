@@ -28,13 +28,13 @@ Debuggers:
 **1. Assembly**
 Assembly is a low-leve llanguage, which CPU understands. x86 ==> 32-bit architecture, x64 ==> 64-bit (newr CPUs). x86 uses EAX registers while x64 uses RAX,RCX, etc.
 
-Registers........x86 (32bit)..........................x64 (64bit)	
-
-General.........EAX, EBX, ECX, EDX................RAX, RBX, RCX, RDX	
+| Registers   |   x86 (32bit)        |  x64 (64bit)  |	
+|-------------|----------------------|---------------------------------|
+| General     |  EAX, EBX, ECX, EDX  | RAX, RBX, RCX, RDX	
 
 Stack...........ESP, EBP............................RSP, RBP	
 
-Else............ESI, EDI...........................RSI, RDI..............(usefull for loops/copy)
+Else           | ESI, EDI...........................RSI, RDI..............(usefull for loops/copy)
 
 
 Example:
@@ -43,5 +43,6 @@ move eax, 5         (put 5 in eax register)
 
 add eax, 3          (add 3 ==> eax=8)
 ```
- 
+
+
    
