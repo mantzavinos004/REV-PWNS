@@ -33,7 +33,7 @@ Assembly is a low-leve llanguage, which CPU understands. x86 ==> 32-bit architec
 | General     |  EAX, EBX, ECX, EDX  | RAX, RBX, RCX, RDX	
 | Stack       |  ESP, EBP            | RSP, RBP	 |
 | Else        | ESI, EDI             | RSI, RDI (usefull for loops/copy) |
-
+| System calls | INT 0x80            | SYSCALL |
 
 Example:
 ```assembly
@@ -51,4 +51,53 @@ add eax, 3          (add 3 ==> eax=8)
 | cmp, jmp, je, jne | compares and jumps |
 | push, pop	| Stack |
 | call, ret	| functions |
-   
+
+Example:
+```assembly
+cmp eax, 10
+je label ;
+jne label2 ;
+```
+> It compares register eax with 10 and if its equal it goes at label or if not equal then at label2
+
+** Stack **
+
+Stack grows to the lower addresses. Push ==> adds a value, Pop ==> removes a value.
+
+Example:
+```assembly
+push eax
+call my_function
+pop eax
+```
+Example:
+```assembly
+my_function:
+    push ebp
+    mov ebp, esp
+    ; ... functions ...
+    mov esp, ebp
+    pop ebp
+    ret
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
