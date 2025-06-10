@@ -26,6 +26,7 @@ Debuggers:
 
 ### Basic knowledge ###
 **1. Assembly**
+
 Assembly is a low-leve llanguage, which CPU understands. x86 ==> 32-bit architecture, x64 ==> 64-bit (newr CPUs). x86 uses EAX registers while x64 uses RAX,RCX, etc.
 
 | Registers   |   x86 (32bit)        |  x64 (64bit)  |	
@@ -34,14 +35,32 @@ Assembly is a low-leve llanguage, which CPU understands. x86 ==> 32-bit architec
 | Stack       |  ESP, EBP            | RSP, RBP	 |
 | Else        | ESI, EDI             | RSI, RDI (usefull for loops/copy) |
 | System calls | INT 0x80            | SYSCALL |
+| New Registers | -                  | R8-R15  |
+
+Notes:
+
+RSP holds tha stack pointer
+
+RBP the base of stack frame
+
+EAX returns values
+
+ECX for loop counters
+
+RSI/RDI are source and destination indexes for string instructions
+
+RIP holds tha address of next instruction to execute
+
+RFLAGs holds a bunch of binary flags
+
 
 Example:
-```assembly
+```asm
 move eax, 5         (put 5 in eax register)
 
 add eax, 3          (add 3 ==> eax=8)
 ```
-** Usefull commands **
+**Usefull commands**
 
 | Command	|  Discribe |
 |-----------|-----------|
@@ -53,25 +72,25 @@ add eax, 3          (add 3 ==> eax=8)
 | call, ret	| functions |
 
 Example:
-```assembly
+```asm
 cmp eax, 10
 je label ;
 jne label2 ;
 ```
 > It compares register eax with 10 and if its equal it goes at label or if not equal then at label2
 
-** Stack **
+**Stack**
 
 Stack grows to the lower addresses. Push ==> adds a value, Pop ==> removes a value.
 
 Example:
-```assembly
+```asm
 push eax
 call my_function
 pop eax
 ```
 Example:
-```assembly
+```asm
 my_function:
     push ebp
     mov ebp, esp
