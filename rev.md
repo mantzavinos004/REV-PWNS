@@ -38,7 +38,7 @@ Else............ESI, EDI...........................RSI, RDI..............(useful
 
 
 Example:
-'''
+'''assembly
 move eax, 5         (put 5 in eax register)
 
 add eax, 3          (add 3 ==> eax=8)
