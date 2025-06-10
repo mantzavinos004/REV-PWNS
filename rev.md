@@ -34,8 +34,9 @@ Stack	      ESP, EBP	              RSP, RBP
 Else      	ESI, EDI	              RSI, RDI	      (usefull for loops/copy)
 
 Example:
-'move eax, 5         (put 5 in eax register)
+''
+move eax, 5         (put 5 in eax register)
 add eax, 3          (add 3 ==> eax=8)
-'
+''
  
    
