@@ -41,6 +41,14 @@ move eax, 5         (put 5 in eax register)
 
 add eax, 3          (add 3 ==> eax=8)
 ```
+** Usefull commands **
 
-
+| Command	|  Discribe |
+|-----------|-----------|
+| mov dest, src | Copy |
+| add, sub | adds/subs |
+| inc, dec |	+1 / -1 |
+| cmp, jmp, je, jne | compares and jumps |
+| push, pop	| Stack |
+| call, ret	| functions |
    
